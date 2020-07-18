@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/slider-manager/static/css/main.ee3b2609.chunk.css",
+    "main.js": "/slider-manager/static/js/main.cf9003f6.chunk.js",
+    "main.js.map": "/slider-manager/static/js/main.cf9003f6.chunk.js.map",
+    "runtime-main.js": "/slider-manager/static/js/runtime-main.e26cbe15.js",
+    "runtime-main.js.map": "/slider-manager/static/js/runtime-main.e26cbe15.js.map",
+    "static/js/2.0c98e210.chunk.js": "/slider-manager/static/js/2.0c98e210.chunk.js",
+    "static/js/2.0c98e210.chunk.js.map": "/slider-manager/static/js/2.0c98e210.chunk.js.map",
+    "index.html": "/slider-manager/index.html",
+    "precache-manifest.e0025861d34b3371185d89d49d661dfd.js": "/slider-manager/precache-manifest.e0025861d34b3371185d89d49d661dfd.js",
+    "service-worker.js": "/slider-manager/service-worker.js",
+    "static/css/main.ee3b2609.chunk.css.map": "/slider-manager/static/css/main.ee3b2609.chunk.css.map",
+    "static/js/2.0c98e210.chunk.js.LICENSE.txt": "/slider-manager/static/js/2.0c98e210.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e26cbe15.js",
+    "static/js/2.0c98e210.chunk.js",
+    "static/css/main.ee3b2609.chunk.css",
+    "static/js/main.cf9003f6.chunk.js"
+  ]
+}
