@@ -16,6 +16,7 @@ class slidesContainer extends React.Component {
   cleanList(list) {
     let counter = 1;
     let newList = [];
+
     for (let i = 0; i < list.length; i++) {
       if (list[i].visible === true) {
         newList[counter - 1] = {
@@ -36,7 +37,7 @@ class slidesContainer extends React.Component {
 
   numberSlides() {
     let counter = 0;
-    for (let i = 0; i < this.state.quoteArr.length; i++) {
+    for (let i = 0; i < this.cleanList(this.props.quoteList).length; i++) {
       if (this.state.quoteArr[i].visible === true) {
         counter++;
       }
@@ -45,7 +46,10 @@ class slidesContainer extends React.Component {
   }
   navNext() {
     this.setState((prevState) => {
-      if (prevState.actualSlide + 1 === this.state.quoteArr.length) {
+      if (
+        prevState.actualSlide + 1 ===
+        this.cleanList(this.props.quoteList).length
+      ) {
         return { actualSlide: 0 };
       }
       return { actualSlide: prevState.actualSlide + 1 };
@@ -55,7 +59,7 @@ class slidesContainer extends React.Component {
   navPrev() {
     this.setState((prevState) => {
       if (prevState.actualSlide === 0) {
-        return { actualSlide: this.state.quoteArr.length - 1 };
+        return { actualSlide: this.cleanList(this.props.quoteList).length - 1 };
       }
       return { actualSlide: prevState.actualSlide - 1 };
     });
@@ -94,6 +98,7 @@ class slidesContainer extends React.Component {
   }
   componentDidUpdate() {
     scripts.setSlides(this.state.actualSlide);
+    console.log(this.cleanList(this.props.quoteList));
   }
   render() {
     const quotes = this.cleanList(this.props.quoteList).map((item) => (
@@ -102,7 +107,7 @@ class slidesContainer extends React.Component {
         id={item.id}
         text={item.text}
         author={item.author}
-        len={this.state.quoteArr.length}
+        len={this.cleanList(this.props.quoteList)}
         visible={item.visible}
       />
     ));

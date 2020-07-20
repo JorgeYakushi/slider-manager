@@ -11,6 +11,8 @@ export function setSlides(index) {
     prev = slides.length - 1;
   }
   for (let i = 0; i < slides.length; i++) {
+    console.log(i);
+    console.log("index:" + index);
     if (i === index) {
       slides[i].style["transform"] = "translateX(0%)";
       slides[i].style["transition"] = "all 0.5s";

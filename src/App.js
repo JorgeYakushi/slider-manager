@@ -9,7 +9,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      quoteArr: quoteList,
+      quoteArr: [],
+      data: null,
     };
     this.handler = this.handler.bind(this);
     this.addSlide = this.addSlide.bind(this);
@@ -49,6 +50,21 @@ class App extends React.Component {
       copyList[i].id = i + 1;
     }
     this.setState({ quoteArr: copyList });
+  }
+  async componentDidMount() {
+    const url = "https://programming-quotes-api.herokuapp.com/quotes/page/2";
+    const response = await fetch(url);
+    const data = await response.json();
+    var newList = [];
+    for (let i = 0; i < 5; i++) {
+      newList[i] = {
+        id: i + 1,
+        text: data[i].en,
+        author: data[i].author,
+        visible: true,
+      };
+    }
+    this.setState({ quoteArr: newList });
   }
   render() {
     return (
